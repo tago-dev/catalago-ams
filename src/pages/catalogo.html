@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo</title>
+
+    <link rel="stylesheet" href="../css/catalogo.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">CATALOGO AMS</div>
+            
+            <button class="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-links">
+                <a href="../../index.html">INICIO</a>
+                <a href="#catalogo">CATALOGO</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="catalog-container">
+            <ul id="municipalityList">
+                <!-- Lista de municípios será preenchida via JavaScript -->
+            </ul>
+            <div id="schoolInfo" class="school-details">
+                <div class="no-school-selected">
+                    Selecione um município para ver os detalhes das escolas
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/header-responsive.js"></script>
+</body>
+</html>
