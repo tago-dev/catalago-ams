@@ -1,44 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo</title>
+    <title>Catálogo AMS - Área Metropolitana Sul</title>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/catalogo.css">
 </head>
 <body>
     <header class="header">
-        <nav class="nav">
-            <div class="logo">CATALOGO AMS</div>
+        <nav class="nav container">
+            <div class="logo">
+                <a href="../../index.html">AMS Catálogo</a>
+            </div>
             
-            <button class="menu-toggle" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
+            <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
+                <span class="hamburger"></span>
             </button>
 
             <div class="nav-links">
-                <a href="../../index.html">INICIO</a>
-                <a href="#catalogo">CATALOGO</a>
+                <a href="../../index.html" class="nav-link">Início</a>
+                <a href="#" class="nav-link active">Catálogo</a>
+                <a href="#contato" class="nav-link">Contato</a>
+                <button class="theme-toggle" aria-label="Alternar tema">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
             </div>
         </nav>
     </header>
 
-    <main class="main-content">
-        <div class="catalog-container">
-            <ul id="municipalityList">
-                <!-- Lista de municípios será preenchida via JavaScript -->
-            </ul>
-            <div id="schoolInfo" class="school-details">
-                <div class="no-school-selected">
-                    Selecione um município para ver os detalhes das escolas
+    <main>
+        <section class="catalog-header">
+            <div class="container">
+                <h1>Escolas da Área Metropolitana Sul</h1>
+                <p class="subtitle">Catálogo completo de instituições de ensino da região metropolitana sul de Curitiba</p>
+                
+                <div class="search-filters">
+                    <div class="search-container">
+                        <div class="input-group">
+                            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                            <input type="text" id="searchInput" placeholder="Buscar escola..." class="search-input">
+                        </div>
+                        <select id="municipalityFilter" class="filter-select">
+                            <option value="">Todos os municípios</option>
+                            <option value="Agudos do Sul">Agudos do Sul</option>
+                            <option value="Araucária">Araucária</option>
+                            <option value="Balsa Nova">Balsa Nova</option>
+                            <option value="Campo do Tenente">Campo do Tenente</option>
+                            <option value="Contenda">Contenda</option>
+                            <option value="Fazenda Rio Grande">Fazenda Rio Grande</option>
+                            <option value="Lapa">Lapa</option>
+                            <option value="Mandirituba">Mandirituba</option>
+                            <option value="Piên">Piên</option>
+                            <option value="Quitandinha">Quitandinha</option>
+                            <option value="Rio Negro">Rio Negro</option>
+                            <option value="São José dos Pinhais">São José dos Pinhais</option>
+                            <option value="Tijucas do Sul">Tijucas do Sul</option>
+                        </select>
+                    </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="schools-section">
+            <div class="container">
+                <div class="schools-grid" id="schoolsContainer">
+                    <!-- Cards das escolas serão inseridos aqui via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal de Detalhes -->
+        <div id="schoolModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div id="modalContent"></div>
             </div>
         </div>
     </main>
 
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Área Metropolitana Sul</h3>
+                    <p>Catálogo de escolas estaduais da região metropolitana sul de Curitiba</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p>Email: contato@ams.edu.br</p>
+                    <p>Telefone: (41) 3000-0000</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Catálogo AMS. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
     <script src="../js/script.js"></script>
     <script src="../js/header-responsive.js"></script>
+    <script src="../js/theme.js"></script>
 </body>
 </html>

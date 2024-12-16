@@ -1,48 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catalogo AMS</title>
+    <title>Catálogo AMS</title>
 
+    <!-- Adicione a fonte do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="./src/css/style.css">
 </head>
 <body>
     <header class="header">
-        <nav class="nav">
-            <div class="logo">CATALOGO AMS</div>
+        <nav class="nav container">
+            <div class="logo">
+                <a href="#inicio">AMS Catálogo</a>
+            </div>
             
-            <button class="menu-toggle" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
+            <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
+                <span class="hamburger"></span>
             </button>
 
             <div class="nav-links">
-                <a href="#inicio">INICIO</a>
-                <a href="./src/pages/catalogo.html">CATALOGO</a>
+                <a href="#inicio" class="nav-link">Início</a>
+                <a href="./src/pages/catalogo.html" class="nav-link">Catálogo</a>
+                <a href="#contato" class="nav-link">Contato</a>
+                <button class="theme-toggle" aria-label="Alternar tema">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
             </div>
         </nav>
     </header>
 
-    <main class="main-content">
-        <div class="content-wrapper">
-            <div class="text-content">
-                <h1 class="title">LISTA DE CONTATOS AMS</h1>
-                <p class="description">
-                    Bem-vindo ao Catálogo AMS, seu portal completo de informações sobre as instituições de ensino da nossa região. 
-Aqui você encontrará dados detalhados sobre escolas estaduais, incluindo indicadores de qualidade, corpo docente e infraestrutura. 
-Navegue pelo nosso catálogo e conheça as unidades educacionais que estão formando o futuro de nossos jovens. 
-Informação transparente e acessível para toda a comunidade escolar.
-                </p>
-                <button class="cta-button"><a href="./src/pages/catalogo.html">VER CATALOGO</a></button>
+    <main>
+        <section class="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Descubra as Escolas da Nossa Região</h1>
+                    <p class="hero-description">
+                        Explore nosso catálogo completo de instituições de ensino. 
+                        Informações detalhadas sobre escolas estaduais, indicadores 
+                        de qualidade e infraestrutura em um só lugar.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="./src/pages/catalogo.html" class="btn btn-primary">
+                            Explorar Catálogo
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                        <a href="#sobre" class="btn btn-secondary">Saiba mais</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="./public/assets/illustration.svg" alt="Ilustração de educação" class="floating">
+                </div>
             </div>
-            <div class="illustration">
-                <img src="./public/assets/illustration.svg" alt="Ilustração">
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📚</div>
+                        <h3>Informações Completas</h3>
+                        <p>Dados detalhados sobre cada instituição de ensino.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Indicadores</h3>
+                        <p>Métricas e estatísticas educacionais atualizadas.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏫</div>
+                        <h3>Infraestrutura</h3>
+                        <p>Conheça os recursos disponíveis em cada escola.</p>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
     </main>
 
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Catálogo AMS. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
     <script src="./src/js/header-responsive.js"></script>
+    <script src="./src/js/theme.js"></script>
 </body>
 </html>
